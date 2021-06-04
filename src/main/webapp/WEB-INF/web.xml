@@ -2,12 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <description></description>
-    <display-name>hello</display-name>
-    <servlet-name>hello</servlet-name>
-    <servlet-class>hello.HelloServlet</servlet-class>
+    <servlet-name>action</servlet-name>
+    <servlet-class>com.springbook.view.controller.DispatcherServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>hello</servlet-name>
-    <url-pattern>/hello.do</url-pattern>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>

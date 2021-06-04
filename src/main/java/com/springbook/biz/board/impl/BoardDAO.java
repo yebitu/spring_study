@@ -68,7 +68,8 @@ public class BoardDAO {
 			conn = JDBCUTIL.getConnection();
 			stmt = conn.prepareStatement(BOARD_DELETE);
 			stmt.setInt(1, vo.getSeq());
-			stmt.executeUpdate(); // db변경이 있으면 excuteUpdate
+			stmt.executeUpdate(); 
+			// db변경이 있으면 excuteUpdate
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
