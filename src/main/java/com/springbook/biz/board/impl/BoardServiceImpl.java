@@ -14,8 +14,9 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
 	
-	public BoardServiceImpl() {
-	}
+	/*
+	 * public BoardServiceImpl() { }
+	 */
 	
 	public void insertBoard(BoardVO vo) {
 //		if(vo.getSeq() == 0) {
