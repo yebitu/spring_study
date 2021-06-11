@@ -82,7 +82,7 @@ public class BoardDAO {
 	
 	// 글 상세 조회
 	public BoardVO getBoard(BoardVO vo) {  // 시퀀스값에 맞게 하나만 받아오므로 리턴값이 BoardVO 객체(하나)
-		System.out.println("===> JDBCUtil로 getBoard() 기능 처리");
+		System.out.println("===> JDBCUTIL로 getBoard() 기능 처리");
 		BoardVO board = null;
 		try {
 			conn = JDBCUTIL.getConnection();
@@ -108,7 +108,7 @@ public class BoardDAO {
 	
 	// 글 목록 조회
 	public List<BoardVO> getBoardList(BoardVO vo) { // BoardVO 전체 객체를 다 받아오므로 list로 반환
-		System.out.println("===> JDBCUtil로 getBoardList() 기능 처리");
+		System.out.println("===> JDBCUTIL로 getBoardList() 기능 처리");
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		
 		try {

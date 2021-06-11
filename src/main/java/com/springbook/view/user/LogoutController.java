@@ -13,6 +13,7 @@ public class LogoutController {
 	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
+		System.out.println("로그아웃 기능처리");
 		session.invalidate();
 		return "login.jsp";
 		

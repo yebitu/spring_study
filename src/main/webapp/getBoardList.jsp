@@ -1,7 +1,7 @@
-
 <%@page contentType="text/html; charset=EUC-KR"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 					   "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,7 +18,7 @@
 ...<a href="logout.do">Log-out</a>
 </h3>
 
-<!-- °Ë»ö ½ÃÀÛ -->
+<!-- ì§¸ï¿½ì¨©ì²  ì©ï¿½ï¿½ï¿½ -->
 <form action="getBoardList.do" method="post">
 <table border="1" cellpadding="1" cellspacing="0" width="700">
 	<tr>
@@ -39,8 +39,7 @@
 	</tr>
 </table>
 </form>
-<!-- °Ë»ö Á¾·á -->
-
+<!-- ì§¸ï¿½ì¨©ì²  ï¿½ì©ì¨Œì°¼ -->
 <table border="1" cellpadding="1" cellspacing="0" width="700">
 	<tr>
 		<th bgcolor="orange" width="100">
@@ -61,11 +60,10 @@
 	<td>${board.seq }</td>
 	<td align="left"><a href="getBoard.do?seq=${board.seq}">${board.title}</a></td>
 	<td>${board.writer}</td>
-	<td><fmt:formatDate value="${board.regDate} pattern="yyyy-MM-dd"/></td>
+	<td><fmt:formatDate value="${board.regDate}" pattern="yyyy-MM-dd"/></td>
 	<td>${board.cnt}</td>
 </tr>
 </c:forEach>
-
 </table>
 <br>
 <a href="insertBoard.jsp"><spring:message code="message.board.list.link.insertBoard"/></a>

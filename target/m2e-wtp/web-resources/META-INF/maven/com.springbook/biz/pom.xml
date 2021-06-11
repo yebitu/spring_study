@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.springbook</groupId>
 	<artifactId>biz</artifactId>
-	<name>BroadWeb</name>
+	<name>BoardWeb</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -60,6 +60,20 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.4</version>
 		</dependency>
+		
+		<!-- Mybatis -->
+	  	<dependency>
+	  		<groupId>org.mybatis</groupId>
+	  		<artifactId>mybatis</artifactId>
+	  		<version>3.3.1</version>
+	  	</dependency>
+	  	
+	  	<!-- Mybatis Spring -->
+	  	<dependency>
+	  		<groupId>org.mybatis</groupId>
+	  		<artifactId>mybatis-spring</artifactId>
+	  		<version>1.2.4</version>
+	  	</dependency>
 				
 		<!-- AspectJ -->
 		<dependency>
@@ -171,8 +185,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
