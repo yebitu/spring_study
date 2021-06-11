@@ -3,6 +3,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="BoardDAO">
+
+	<resultMap type="board" id="boardResult">
+		<id property="seq" column="SEQ"/>
+		<result property="title" column="TITLE"/>
+		<result property="writer" column="WRITER"/>
+		<result property="content" column="CONTENT"/>
+		<result property="regDate" column="REGDATE"/>
+		<result property="cnt" column="CNT"/>
+	</resultMap>
+	
 	<insert id="insertBoard">
 	<![CDATA[
 		INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT)
@@ -32,11 +42,15 @@
 		]]>
 	</select>
 	
-	<select id="getBoardList" resultType="board">
-		<![CDATA[
+	<select id="getBoardList" resultMap="boardResult">
 		SELECT * FROM BOARD
-		WHERE TITLE LIKE '%' || #{searchKeyword} || '%'
+		WHERE 1 =1 
+		<if test="searchCondition == 'TITLE'">
+			AND TITLE LIKE '%' || #{searchKeyword} || '%'
+		</if>
+		<if test="searchCondition == 'CONTENT'">
+			AND CONTENT LIKE '%' || #{searchKeyword} || '%'
+		</if>
 		ORDER BY SEQ DESC
-		]]>
 	</select>
 </mapper>
